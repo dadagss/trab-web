@@ -1,0 +1,33 @@
+name: CI/CD Pipeline
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Ou a versão que você estiver usando
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build application
+        run: npm run build
+
+      - name: Deploy to Nginx server
+        env:
+          HOST: ${{ secrets.NGINX_HOST }}
+          USERNAME: ${{ secrets.NGINX_USERNAME }}
+          PASSWORD: ${{ secrets.NGINX_PASSWORD }}
+        run: |
+          echo "Deploying to Nginx server..."
+          sshpass -p $PASSWORD scp -r ./build/* $USERNAME@$HOST:/path/to/nginx/html
