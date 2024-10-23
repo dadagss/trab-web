@@ -40,7 +40,7 @@ trab-web
 1. Clone este repositório:
 ```bash
 git clone https://github.com/dadagss/trab-web.git
-cd trab-webb
+cd trab-web
 ```
 
 2. Inicialize o Terraform:
