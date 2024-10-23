@@ -30,9 +30,10 @@ trab-web
     ├── dockerfile
 ├── site
     ├── estilos.css #Referente a pagina inicial
-    ├── estilos2.css #Referente a pagina de login
+    ├── estilos2.css #Referente a pagina de login e cadastro
     ├── paginainicial.html
     ├── paginalogin.html 
+    ├── cadastro.html 
     ├── script.js #Referente a pagina inicial
 ```
 
