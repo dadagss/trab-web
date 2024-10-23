@@ -3,31 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Doidos BET!</title>
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .odds p {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Doidos BET!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="paginalogin.html">Login</a> <!-- Corrigido para redirecionar para login.html -->
-            </li>
-          </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="paginalogin.html">Login</a>
+                </li>
+            </ul>
         </div>
-      </nav>
+    </nav>
 
-      <!-- Adicione o Bootstrap JS se estiver usando -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Card para o Jogo 1: Real Madrid vs Barcelona -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="images/realcerlona.jpg" class="card-img-top" alt="Imagem do Jogo" />
+                    <div class="card-body">
+                        <h5 class="card-title">Jogo 1: Real Madrid vs Barcelona</h5>
+                        <p class="card-text">Escolha seu time favorito e veja as odds!</p>
+                        <div class="text-center mb-3">
+                            <button class="btn btn-primary" onclick="votar('A')">Real Madrid</button>
+                            <button class="btn btn-danger" onclick="votar('B')">Barcelona</button>
+                        </div>
+                        <div class="odds">
+                            <p>Odds:</p>
+                            <p><strong id="oddsA">Real Madrid:</strong> </p>
+                            <p><strong id="oddsB">Barcelona:</strong> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card para o Jogo 2: Time C vs Time D -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="images/loudfuria.jpg" class="card-img-top" alt="Imagem do Jogo" />
+                    <div class="card-body">
+                        <h5 class="card-title">Jogo 2: Furia vs Loud</h5>
+                        <p class="card-text">Escolha seu time favorito e veja as odds!</p>
+                        <div class="text-center mb-3">
+                            <button class="btn btn-primary" onclick="votar('C')">Furia</button>
+                            <button class="btn btn-danger" onclick="votar('D')">Loud</button>
+                        </div>
+                        <div class="odds">
+                            <p>Odds:</p>
+                            <p><strong id="oddsC">Furia:</strong> </p>
+                            <p><strong id="oddsD">Loud:</strong> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card para o Jogo 3: Jake Paul vs Myke Tyson -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card">
+                    <img src="images/images.jpg" class="card-img-top" alt="Imagem do Jogo" />
+                    <div class="card-body">
+                        <h5 class="card-title">Jogo 3: Jake Paul vs Myke Tyson</h5>
+                        <p class="card-text">Escolha seu Myke Tysonavorito e veja as odds!</p>
+                        <div class="text-center mb-3">
+                            <button class="btn btn-primary" onclick="votar('E')">Jake Paul</button>
+                            <button class="btn btn-danger" onclick="votar('F')">Myke Tyson</button>
+                        </div>
+                        <div class="odds">
+                            <p>Odds:</p>
+                            <p><strong id="oddsE">Jake Paul:</strong> </p>
+                            <p><strong id="oddsF">Myke Tyson:</strong> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione o arquivo JavaScript separado -->
+    <script src="script.js"></script>
+
+    <!-- Adicione o Bootstrap JS se estiver usando -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
