@@ -78,15 +78,18 @@ resource "aws_instance" "example" {
   subnet_id     = aws_subnet.example.id
   security_groups = [aws_security_group.example.name]
 
-  # User data to install Docker and run your containerized app
-  user_data = <<-EOF
-              #!/bin/bash
-              yum update -y
-              amazon-linux-extras install docker -y
-              service docker start
-              docker run -d -p 80:80 your_docker_image # Substitua pelo seu nome de imagem
-              EOF
-}
+# User data to install Docker, MySQL client, and load MySQL database
+user_data = <<-EOF
+            #!/bin/bash
+            yum update -y
+            amazon-linux-extras install docker -y
+            service docker start
+            
+            # Docker run command for your containerized app
+            docker run -d -p 80:80 sitefinalv3 
+            
+            # Instalar o MySQL client
+            yum install -y mysql
 
 # Create a MySQL database on RDS
 resource "aws_db_instance" "example" {

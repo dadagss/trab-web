@@ -1,0 +1,12 @@
+#imagem do mysql
+FROM mysql:8.0
+
+# As variáveis de ambiente são configuradas no Compose
+# Elas serão fornecidas a partir do arquivo .env
+ENV MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+ENV MYSQL_DATABASE=$MYSQL_DATABASE
+ENV MYSQL_USER=$MYSQL_USER
+ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
+
+# Exponha a porta padrão do MySQL
+EXPOSE 3306

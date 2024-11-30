@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .               
+      dockerfile: Devops/Dockerfile 
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: .               
+      dockerfile: Devops/Dockerfile.mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}  # Senha do root
+      MYSQL_DATABASE: ${MYSQL_DATABASE}  # Nome do banco de dados
+    ports:
+      - "3307:3306"  # Expondo a porta 3307 na máquina local
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
