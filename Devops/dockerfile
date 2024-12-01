@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Copiar o conteúdo da pasta 'site' para o diretório padrão do NGINX
-COPY site ../usr/share/nginx/html
+COPY ./site /usr/share/nginx/html
 
 # Abro o contêiner na porta 80
 EXPOSE 80

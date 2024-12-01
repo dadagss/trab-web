@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: ..  # Contexto do diretório pai, que é 'trab-web'
+      dockerfile: Devops/Dockerfile  # Dockerfile para o serviço web
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: ..  # Contexto do diretório pai, que é 'trab-web'
+      dockerfile: Devops/Dockerfile.mysql  # Dockerfile para o banco de dados MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

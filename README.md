@@ -28,6 +28,7 @@ trab-web
     ├── criarmaquina.tf
     ├── default.conf
     ├── dockerfile
+    ├── dockerfile.mysql
 ├── site
     ├── estilos.css #Referente a pagina inicial
     ├── estilos2.css #Referente a pagina de login e cadastro
@@ -35,6 +36,14 @@ trab-web
     ├── paginalogin.html 
     ├── cadastro.html 
     ├── script.js #Referente a pagina inicial
+    ├── server.js
+    ├── cadastroDB.sql
+    ├── backendcadastro.py #Não utilizado
+    ├── package-lock.json
+    ├── package.json
+        ├── Images
+        ├── node_modules
+    ├── docker-compose.yml
 ```
 
 ## Como executar
